@@ -33,7 +33,7 @@
                         {{ $post['title'] }}</h1>
                 </header>
 
-                <p>{{ $post->body }}</p>
+                <div class="prose dark:prose-invert prose-p:my-1">{!! str_replace('<br>', '', $post->body) !!}</div>
             </article>
         </div>
     </main>
