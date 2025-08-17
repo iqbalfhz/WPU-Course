@@ -26,8 +26,10 @@
             </div>
         </form>
 
+        <div class="pagination bg-white dark:bg-gray-800 ...">
+            {{ $posts->links() }}
+        </div>
 
-        {{ $posts->links() }}
         <div class="grid mt-4 gap-8 lg:grid-cols-3 md:grid-cols-2">
             @forelse ($posts as $post)
                 <article
