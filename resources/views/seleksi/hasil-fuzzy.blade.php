@@ -15,20 +15,19 @@
                             <th class="px-3 py-2 border">No</th>
                             <th class="px-3 py-2 border">Nama</th>
                             <th class="px-3 py-2 border">Email</th>
-                            <th class="px-3 py-2 border">Nilai Akademik</th>
-                            <th class="px-3 py-2 border">Soft Skill</th>
+                            <!-- Kolom Nilai Akademik dan Soft Skill dihapus -->
                             <th class="px-3 py-2 border">Hasil Seleksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($kandidats as $kandidat)
+                        @forelse($results as $kandidat)
                             <tr>
                                 <td class="px-3 py-2 border">{{ $loop->iteration }}</td>
-                                <td class="px-3 py-2 border">{{ $kandidat->nama }}</td>
-                                <td class="px-3 py-2 border">{{ $kandidat->email }}</td>
-                                <td class="px-3 py-2 border">{{ $kandidat->nilai_akademik }}</td>
-                                <td class="px-3 py-2 border">{{ $kandidat->soft_skill }}</td>
-                                <td class="px-3 py-2 border font-semibold text-center">-</td>
+                                <td class="px-3 py-2 border">{{ $kandidat['nama'] }}</td>
+                                <td class="px-3 py-2 border">{{ $kandidat['email'] }}</td>
+                                <!-- Kolom Nilai Akademik dan Soft Skill dihapus -->
+                                <td class="px-3 py-2 border font-semibold text-center">{{ $kandidat['fuzzy_score'] }}
+                                </td>
                             </tr>
                         @empty
                             <tr>

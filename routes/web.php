@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\FuzzySeleksiController;
     use App\Http\Controllers\KandidatController;
     use App\Http\Controllers\PostDashboardController;
     use App\Http\Controllers\ProfileController;
@@ -92,6 +93,8 @@
             Route::view('/hasil-fuzzy', 'seleksi.hasil-fuzzy')->name('hasil-fuzzy');
             Route::view('/rule-fuzzy', 'seleksi.rule-fuzzy')->name('rule-fuzzy');
         });
+
+        Route::get('/seleksi/hasil-fuzzy', [FuzzySeleksiController::class, 'index'])->name('seleksi.hasil-fuzzy');
     });
 
     Route::middleware('auth')->group(function () {
