@@ -1,10 +1,10 @@
-
-    <?php
+<?php
 
     use App\Http\Controllers\KandidatController;
     use App\Http\Controllers\PostDashboardController;
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\TesOnlineController;
+    use App\Http\Controllers\UjianController;
     use App\Models\Post;
     use Illuminate\Support\Facades\Route;
 
@@ -45,6 +45,16 @@
             'description' => 'Get in touch with us through our contact form or find our contact details here.'
         ]);
     });
+
+    // Ujian
+    Route::get('/ujian', function () {
+        return view('ujian', [
+            'title' => 'Ujian',
+            'description' => 'Halaman Ujian Online untuk Kandidat'
+        ]);
+    });
+    Route::get('/ujian/{jenis}', [UjianController::class, 'show'])->name('ujian.tes');
+    Route::post('/ujian/{jenis}', [UjianController::class, 'submit'])->name('ujian.submit');
 
     Route::get('/dashboard', function () {
         return view('dashboard.index');

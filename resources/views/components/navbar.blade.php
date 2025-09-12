@@ -22,6 +22,7 @@
                     <x-landing-page-nav-link href="/posts" :current="request()->is('posts')">Blog</x-landing-page-nav-link>
                     <x-landing-page-nav-link href="/about" :current="request()->is('about')">About</x-landing-page-nav-link>
                     <x-landing-page-nav-link href="/contact" :current="request()->is('contact')">Contact</x-landing-page-nav-link>
+                    <x-landing-page-nav-link href="/ujian" :current="request()->is('ujian')">Ujian</x-landing-page-nav-link>
                 </div>
             </div>
 
@@ -151,6 +152,8 @@
                     :current="request()->is('about')">About</x-landing-page-nav-link>
                 <x-landing-page-nav-link class="block" href="/contact"
                     :current="request()->is('contact')">Contact</x-landing-page-nav-link>
+                <x-landing-page-nav-link class="block" href="/ujian"
+                    :current="request()->is('ujian')">Ujian</x-landing-page-nav-link>
             </div>
 
             @auth
@@ -229,11 +232,3 @@
         }
     }
 </script>
-
-<!-- Suggested Tailwind base (dark) -->
-<style>
-    /* Optional: subtle gradient background for the navbar area */
-    nav {
-        background-image: linear-gradient(to bottom, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.6));
-    }
-</style>

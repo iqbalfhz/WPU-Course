@@ -9,8 +9,8 @@ class Kandidat extends Model
     //
     protected $fillable = [
         'nama',
-        'usia',
         'email',
+        'usia',
         'nilai_akademik',
         'tes_kompetensi_teknis',
         'tes_psikotes',
